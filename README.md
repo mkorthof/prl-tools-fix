@@ -7,11 +7,11 @@ and run script in the VM. If the tools are not mounted the script will try to mo
 the iso itself from current dir. After it's done the installer should work without errors.  
 
 If you dont have Parallels Tools package you can get it on a hardware node  
-from "/usr/share/parallels-server/modtgz". Or you can download latest version from  
+from "/usr/share/parallels-server/tools". Or you can download latest version from  
 http://updates.virtuozzo.com/cloudserver/6.0/Updates/Packages  
 You need to get "parallels-server" (verify rpm checksum with repodata).  
 The iso can be extracted like this:  
-`rpm2cpio parallels-server-6*.rpm | cpio -iv --to-stdout "*prl-tools-lin.iso" > prl-tools-lin.iso`  
+`$ rpm2cpio parallels-server-6*.rpm | cpio -iv --to-stdout "*prl-tools-lin.iso" > prl-tools-lin.iso` 
 
 You can also just manually apply the included patch instead  
 
@@ -22,5 +22,5 @@ You can also just manually apply the included patch instead
   https://aur.archlinux.org/cgit/aur.git/tree/0001-fix-for-4.9.y.patch?h=parallels-modtgz  
 - prl_tg patch was changed to match more correct rikover's patch  
 
-To optionally create an updated iso:  
+To optionally create an updated iso (mkiso can also be used):  
 `$ genisoimage -o prl-tools-lin.iso -R -J -l -v -V "Parallels Tools" parallels-tools`  
