@@ -1,5 +1,5 @@
 # Parallels Tools Fix for Debian 9 (stretch) 
-## Kernel 4.9.0
+### Kernel 4.9.0
 
 This script fixes compiles errors in parallels-tools from prl-tools-lin.iso so the  
 installer works on Debian 9 guests. Make sure Paralles Tools is mounted on the guest VM  
