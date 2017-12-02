@@ -1,0 +1,33 @@
+diff -ur --unidirectional-new-file parallels-tools/kmods/prl_mod/prl_fs/SharedFolders/Guest/Linux/prl_fs/inode.c parallels-tools-stretch/kmods/prl_mod/prl_fs/SharedFolders/Guest/Linux/prl_fs/inode.c
+--- parallels-tools/kmods/prl_mod/prl_fs/SharedFolders/Guest/Linux/prl_fs/inode.c	2016-12-08 10:24:36.000000000 +0100
++++ parallels-tools-stretch/kmods/prl_mod/prl_fs/SharedFolders/Guest/Linux/prl_fs/inode.c	2017-12-01 22:35:12.000000000 +0100
+@@ -355,7 +355,13 @@
+ }
+ 
+ static int prlfs_rename(struct inode *old_dir, struct dentry *old_de,
++// fix - error: initialization from incompatible pointer type (prlfs_dir_iops.rename)
++#if LINUX_VERSION_CODE > KERNEL_VERSION(4,9,0)
++			struct inode *new_dir, struct dentry *new_de,
++			unsigned int flags)
++#else
+ 			struct inode *new_dir, struct dentry *new_de)
++#endif
+ {
+ 	void *np, *nbuf;
+ 	int nbuflen;
+diff -ur --unidirectional-new-file parallels-tools/kmods/prl_mod/prl_tg/Toolgate/Guest/Linux/prl_tg/prltg.c parallels-tools-stretch/kmods/prl_mod/prl_tg/Toolgate/Guest/Linux/prl_tg/prltg.c
+--- parallels-tools/kmods/prl_mod/prl_tg/Toolgate/Guest/Linux/prl_tg/prltg.c	2016-11-19 16:59:25.000000000 +0100
++++ parallels-tools-stretch/kmods/prl_mod/prl_tg/Toolgate/Guest/Linux/prl_tg/prltg.c	2017-12-01 22:35:12.000000000 +0100
+@@ -469,7 +469,12 @@
+ 	/* lock userspace pages */
+ 	got = get_user_pages(
+ 			     sbuf->u.Va, npages,
++// fix - error: too many arguments to function ‘get_user_pages’
++#if LINUX_VERSION_CODE > KERNEL_VERSION(4,9,0)
++			     sbuf->Writable ? FOLL_WRITE : 0, 
++#else
+ 			     sbuf->Writable, 0,
++#endif
+ 			     uple->p, NULL);
+ 	up_read(&current->mm->mmap_sem);
+ 
