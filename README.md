@@ -24,3 +24,5 @@ You can also just manually apply the included patch instead
 
 To optionally create an updated iso (mkiso can also be used):  
 `$ genisoimage -o prl-tools-lin.iso -R -J -l -v -V "Parallels Tools" parallels-tools`  
+
+For more info see Virtuozzo Forums/Support/KB  
