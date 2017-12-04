@@ -49,7 +49,7 @@ for i in install installer kmods tools version; do cp -r "$mount/$i" "$tools"; d
 if test ! -d "$tools/kmods/$mod"; then mkdir "$tools/kmods/$mod"; fi && \
 tar -xf "$tools/kmods/${mod}.tar.gz" -C "$tools/kmods/$mod" && \
 patch -p0 -i prl_fs.patch && patch -p0 -i prl_tg.patch && \
-mv "$tools/kmods/${mod}.tar.gz" "$tools/kmods/${mod}.tar.gz.bak" && \
+mv "$tools/kmods/${mod}.tar.gz" "${mod}.tar.gz.bak" && \
 tar -C "$tools/kmods/$mod" --remove-files -zcf "$tools/kmods/${mod}.tar.gz" prl_fs/ prl_eth/ prl_tg/ dkms.conf Makefile.kmods && \
 printf "\nDone. You can now run the installer as usual. To optionally create an updated iso:\n \
      \$ genisoimage -o prl-tools-lin.iso -R -J -l -v -V \"Parallels Tools\" parallels-tools\n\n" || \
