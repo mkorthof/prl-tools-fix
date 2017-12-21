@@ -20,7 +20,7 @@ You can also just manually apply the included patch instead
 - Compared and verified changes with these other patches:  
   https://gist.github.com/rkitover/3c524cfe7c81a4a0bee286acd15f3714/revisions  
   https://aur.archlinux.org/cgit/aur.git/tree/0001-fix-for-4.9.y.patch?h=parallels-tools  
-- prl_tg patch was changed to match the more correct rikover's patch  
+- prl_tg patch was changed to match the more correct patch by rikover  
 
 To optionally create an updated iso (mkiso can also be used):  
 `$ genisoimage -o prl-tools-lin.iso -R -J -l -v -V "Parallels Tools" parallels-tools`  
