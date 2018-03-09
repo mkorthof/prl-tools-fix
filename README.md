@@ -3,8 +3,7 @@
 
 This script fixes compile errors in parallels-tools (from prl-tools-lin.iso) so the installer works on Debian 9 guests.
 
-Make sure Paralles Tools is mounted on the guest VM and run script in the VM. If the tools are not mounted the script will try to mount  
-the iso itself from current dir. After it's done the installer should work without errors.  
+Make sure Paralles Tools is mounted on the guest VM and run script in the VM. If the tools are not mounted the script will try to mount the iso itself from current dir. After it's done the installer should work without errors.  
 
 If you dont have Parallels Tools package you can get it on a hardware node  
 from "/usr/share/parallels-server/tools". Or you can download latest version from  
