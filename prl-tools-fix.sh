@@ -2,7 +2,7 @@
 
 # 20171202 MK Parallels Tools Fix for Debian 9 (stretch) with kernel 4.9.0
 
-# This script fixes compiles errors in parallels-tools from prl-tools-lin.iso so the
+# This script fixes compiler errors in parallels-tools from prl-tools-lin.iso so the
 # installer works on Debian 9 guests. Make sure Paralles Tools is mounted on the guest VM
 # and run script in the VM. If the tools are not mounted the script will try to mount
 # the iso itself from current dir. After it's done the installer should work without errors.
