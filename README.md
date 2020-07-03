@@ -1,3 +1,5 @@
+_Not needed on Debian 10 (buster), since prl-tools work fine__
+
 # Parallels Tools Fix for Debian 9 (stretch) 
 ### Kernel 4.9.0
 
